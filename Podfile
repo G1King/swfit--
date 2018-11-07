@@ -25,8 +25,9 @@ target 'HeadLines' do
   pod 'FDFullscreenPopGesture'
   pod 'lottie-ios'
   pod 'CYLTabBarController'
-  pod 'MBProgressHUD'
   pod 'HMSegmentedControl'
   pod 'IQKeyboardManagerSwift'
   pod 'EmptyDataSet-Swift'
+  pod 'CocoaLumberjack/Swift'
+  pod 'Toast-Swift'
 end

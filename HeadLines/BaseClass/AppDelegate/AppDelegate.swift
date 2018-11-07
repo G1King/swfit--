@@ -9,6 +9,7 @@
 import UIKit
 import Moya
 import CYLTabBarController
+import CocoaLumberjack
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,20 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UserDefaults.standard.set("46db28cef871485f88fc1e1b3ba77521", forKey: "userId")
-        UserDefaults.standard.set("46db28cef871485f88fc1e1b3ba77521B5179A06D2A3E13D743564C079326245", forKey: "token")
+        UserDefaults.standard.set("46db28cef871485f88fc1e1b3ba77521DA3F9278E2C01FBE1E0F0B56D64EB62B", forKey: "token")
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.rootViewController = self.createTabBarController()
         self.window?.makeKeyAndVisible()
-        let provider = MoyaProvider<API>().request(API.getHomeCarousels(status: "1", tag: "1")) { (result) in
-            switch result {
-            case let .success(response):
-               try! print(response.mapJSON())
-            case let .failure(error):
-                print(error)
-            }
-        }
-        
+        DDTTYLogger.sharedInstance.logFormatter = LogFormatter()
+        DDLog.add(DDTTYLogger.sharedInstance, with: .debug);
+//        ApiProvider.request(API.getHomeCarousels(status: "1", tag: "1"), model: <#T##HandyJSON.Protocol#>, completion: <#T##((HandyJSON?) -> Void)?##((HandyJSON?) -> Void)?##(HandyJSON?) -> Void#>)
         return true
     }
 

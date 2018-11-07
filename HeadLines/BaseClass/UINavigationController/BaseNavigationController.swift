@@ -16,7 +16,17 @@ class BaseNavigationController: UINavigationController {
         // Do any additional setup after loading the view.
     }
     
-
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.viewControllers.count > 0 {
+          viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "returnBt"), selectImage: nil, imageEdgeInsets: .zero, target: self, action: #selector(clickBack))
+            viewController.hidesBottomBarWhenPushed = true
+        }
+        
+        super.pushViewController(viewController, animated: animated)
+    }
+    @objc func clickBack(){
+        self.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

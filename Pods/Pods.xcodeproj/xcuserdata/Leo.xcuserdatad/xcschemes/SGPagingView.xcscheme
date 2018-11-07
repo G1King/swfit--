@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6F6F1FE38BA39D62F04FAFE2C27BC992"
+               BlueprintIdentifier = "92A5C9175AD8BC88CF28A74FD1F34D4C"
                BlueprintName = "SGPagingView"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SGPagingView.framework">

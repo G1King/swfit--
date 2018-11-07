@@ -7,10 +7,9 @@
 //
 
 import UIKit
-
 class Helper: NSObject {
- public static  let TOKEN = UserDefaults.standard.object(forKey: "token")
- public static  let USERID = UserDefaults.standard.object(forKey: "userId")
+    public static  let TOKEN = UserDefaults.standard.object(forKey: "token") as? String
+    public static  let USERID = UserDefaults.standard.object(forKey: "userId") as? String
     
-    
+   
 }
